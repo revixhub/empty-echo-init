@@ -13,6 +13,8 @@ const Index = () => {
 
   useEffect(() => {
     setLoaded(true);
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
   }, []);
 
   return (

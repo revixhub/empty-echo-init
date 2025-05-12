@@ -40,10 +40,6 @@ const Services = () => {
             </Card>
           ))}
         </div>
-        
-        <p className="text-xl mt-10 p-6 border-l-4 border-primary bg-gray-900/40 rounded-r-md">
-          «Если вы ждёте чуда — закройте страницу в правом верхнем углу. А если хотите результат — напишите»
-        </p>
       </div>
     </section>
   );

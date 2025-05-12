@@ -13,13 +13,15 @@ const Contact = () => {
           Давайте разберёмся в вашей задаче
         </p>
         
-        <Button 
-          size="lg"
-          className="text-lg py-6 px-8 mt-4 bg-primary hover:bg-primary/90"
-          onClick={() => window.open("https://t.me/artemuhanov", "_blank")}
-        >
-          <SendHorizontal className="mr-2" /> Написать в Telegram
-        </Button>
+        <div className="w-full flex justify-center">
+          <Button 
+            size="lg"
+            className="text-lg py-6 px-8 mt-4 bg-primary hover:bg-primary/90 w-full sm:w-auto"
+            onClick={() => window.open("https://t.me/artemuhanov", "_blank")}
+          >
+            <SendHorizontal className="mr-2" /> Написать в Telegram
+          </Button>
+        </div>
       </div>
     </section>
   );
