@@ -13,10 +13,10 @@ const Contact = () => {
           Давайте разберёмся в вашей задаче
         </p>
         
-        <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center items-center">
           <Button 
             size="lg"
-            className="text-lg py-6 px-8 mt-4 bg-primary hover:bg-primary/90 w-full sm:w-auto"
+            className="text-lg py-6 px-8 mt-4 bg-primary hover:bg-primary/90 mx-auto"
             onClick={() => window.open("https://t.me/artemuhanov", "_blank")}
           >
             <SendHorizontal className="mr-2" /> Написать в Telegram

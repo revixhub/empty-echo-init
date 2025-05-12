@@ -1,14 +1,14 @@
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { 
   Carousel, 
   CarouselContent, 
   CarouselItem, 
   CarouselNext, 
-  CarouselPrevious 
+  CarouselPrevious,
+  CarouselApi
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check } from "lucide-react";
 
 const cases = [
   {
@@ -69,7 +69,7 @@ const cases = [
     result: "Ни один лид не теряется. Все брони, upsell и отзывы — под контролем"
   },
   {
-    logo: "/lovable-uploads/8d9b0861-8b31-4b38-a6f1-76ef70ac4ce9.png",
+    logo: "/lovable-uploads/9ca711df-93f2-4579-a8a2-6a38ef0b6295.png",
     name: "GMA",
     industry: "Детейлинг",
     points: [
@@ -85,12 +85,36 @@ const cases = [
 ];
 
 const Cases = () => {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (!api) return;
+    
+    // Set up auto-scrolling
+    intervalRef.current = setInterval(() => {
+      api.scrollNext();
+    }, 5000); // Change slide every 5 seconds
+    
+    // Clean up the interval on unmount
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [api]);
+
   return (
     <section id="cases" className="py-20 border-t border-gray-800">
       <div className="space-y-8">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Несколько кейсов</h2>
         
-        <Carousel className="w-full max-w-4xl mx-auto mt-10">
+        <Carousel 
+          className="w-full max-w-4xl mx-auto mt-10" 
+          setApi={setApi}
+          opts={{
+            align: 'start',
+            loop: true, // Enable looping
+          }}
+        >
           <CarouselContent>
             {cases.map((caseItem, index) => (
               <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/1 p-1">
@@ -114,7 +138,7 @@ const Cases = () => {
                       <ul className="space-y-2">
                         {caseItem.points.map((point, idx) => (
                           <li key={idx} className="flex items-start space-x-2">
-                            <Check className="h-5 w-5 text-primary mt-1 min-w-[20px]" />
+                            <span className="text-xl min-w-[20px]">🔥</span>
                             <span className="text-sm text-gray-200">{point}</span>
                           </li>
                         ))}
