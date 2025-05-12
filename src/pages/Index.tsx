@@ -1,6 +1,12 @@
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Problems from "@/components/Problems";
+import Services from "@/components/Services";
+import Cases from "@/components/Cases";
+import Contact from "@/components/Contact";
 
 const Index = () => {
   const [loaded, setLoaded] = useState(false);
@@ -10,19 +16,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-background p-4">
-      <div className={`max-w-md w-full text-center transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="space-y-6 animate-fade-in">
-          <h1 className="text-4xl font-bold tracking-tight">Пустой Проект</h1>
-          <p className="text-muted-foreground text-lg">
-            Готов к вашим идеям и творчеству
-          </p>
-          <div className="flex justify-center pt-4">
-            <Button size="lg" className="rounded-full">
-              Начать
-            </Button>
-          </div>
-        </div>
+    <div className={`min-h-screen w-full bg-[#0F1219] text-white transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Hero />
+        <About />
+        <Problems />
+        <Services />
+        <Cases />
+        <Contact />
       </div>
     </div>
   );
