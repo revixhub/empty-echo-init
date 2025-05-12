@@ -14,15 +14,15 @@ const Hero = () => {
           Интегратор CRM/ERP и консультант по активным продажам
         </p>
         <p className="text-2xl md:text-3xl font-bold text-gray-100 mt-6 border-l-4 border-primary pl-4">
-          «Убираю бардак в отделе продаж, а вы заниматесь стратегическими задачами»
+          «Убираю бардак в отделе продаж, а вы занимаетесь стратегическими задачами»
         </p>
         <p className="text-lg text-gray-300 mt-6 max-w-2xl">
           Помогаю достичь годовых целей по выручке через выстраивание процессов продаж и добавление независимого канала лидогенерации.
         </p>
-        <div className="mt-8">
+        <div className="mt-8 flex justify-center md:justify-start">
           <Button 
             size="lg"
-            className="text-lg py-6 px-8 bg-primary hover:bg-primary/90"
+            className="text-lg py-6 px-8 bg-primary hover:bg-primary/90 w-full sm:w-auto"
             onClick={() => window.open("https://t.me/artemuhanov", "_blank")}
           >
             <SendHorizontal className="mr-2" /> Написать в Telegram

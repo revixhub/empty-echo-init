@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { 
   Carousel, 
   CarouselContent, 
@@ -9,6 +9,7 @@ import {
   CarouselApi
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import { Check } from "lucide-react";
 
 const cases = [
   {
@@ -86,21 +87,6 @@ const cases = [
 
 const Cases = () => {
   const [api, setApi] = React.useState<CarouselApi>();
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    if (!api) return;
-    
-    // Set up auto-scrolling
-    intervalRef.current = setInterval(() => {
-      api.scrollNext();
-    }, 5000); // Change slide every 5 seconds
-    
-    // Clean up the interval on unmount
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [api]);
 
   return (
     <section id="cases" className="py-20 border-t border-gray-800">
@@ -112,7 +98,7 @@ const Cases = () => {
           setApi={setApi}
           opts={{
             align: 'start',
-            loop: true, // Enable looping
+            loop: true, // Keep looping enabled, just remove auto-scrolling
           }}
         >
           <CarouselContent>
@@ -138,7 +124,7 @@ const Cases = () => {
                       <ul className="space-y-2">
                         {caseItem.points.map((point, idx) => (
                           <li key={idx} className="flex items-start space-x-2">
-                            <span className="text-xl min-w-[20px]">🔥</span>
+                            <Check className="h-5 w-5 text-primary mt-1 min-w-[20px]" />
                             <span className="text-sm text-gray-200">{point}</span>
                           </li>
                         ))}
