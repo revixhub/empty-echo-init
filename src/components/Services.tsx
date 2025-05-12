@@ -6,8 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const services = [
   {
     icon: <Database className="h-8 w-8" />,
-    title: "Внедрение CRM/ERP",
-    description: "amoCRM, Битрикс24, МойСклад — подберем систему под ваши задачи и интегрируем в бизнес-процессы."
+    title: "Внедрение CRM/ERP - amoCRM, Битрикс24, МойСклад",
+    description: "Подберем/доработаем систему под ваши задачи и интегрируем в бизнес-процессы."
   },
   {
     icon: <Users className="h-8 w-8" />,

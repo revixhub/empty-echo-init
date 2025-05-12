@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Problems from "@/components/Problems";
@@ -24,6 +24,15 @@ const Index = () => {
         <Services />
         <Cases />
         <Contact />
+        
+        <footer className="py-8 border-t border-gray-800 mt-10 text-center text-sm text-gray-500">
+          <div className="flex items-center justify-center space-x-4">
+            <span>© {new Date().getFullYear()} Артём Уханов</span>
+            <Link to="/privacy" className="hover:text-primary hover:underline">
+              Политика конфиденциальности
+            </Link>
+          </div>
+        </footer>
       </div>
     </div>
   );

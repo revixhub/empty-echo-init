@@ -11,22 +11,22 @@ const About = () => {
         
         <div className="grid md:grid-cols-2 gap-8 mt-10">
           <div className="space-y-6">
-            <div className="flex items-center">
-              <h3 className="text-xl font-bold">СЕО RevixHUB</h3>
+            <div>
+              <h3 className="text-xl font-bold mb-3">СЕО RevixHUB</h3>
               <Button 
-                variant="link" 
-                className="text-primary ml-2"
+                variant="outline" 
+                className="text-primary border-primary hover:bg-primary/10"
                 onClick={() => window.open("https://revixhub.ru/", "_blank")}
               >
-                <ExternalLink className="h-4 w-4 ml-1" />
+                Посетить сайт <ExternalLink className="h-4 w-4 ml-1" />
               </Button>
             </div>
             
-            <div className="flex items-center">
-              <p className="text-lg">Более 100 внедрений CRM/ERP с 2017 года</p>
+            <div>
+              <p className="text-lg mb-3">Более 100 внедрений CRM/ERP с 2017 года</p>
               <Button 
-                variant="link" 
-                className="text-primary ml-2 whitespace-nowrap"
+                variant="outline"
+                className="text-primary border-primary hover:bg-primary/10"
                 onClick={() => window.open("https://vait.teamly.ru/space/931bb747-891d-4f0b-bf2d-22d376042904/database/d9d43350-45aa-46a1-bdbc-d443b6671917", "_blank")}
               >
                 Смотреть кейсы <ExternalLink className="h-4 w-4 ml-1" />
