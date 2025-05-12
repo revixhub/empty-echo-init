@@ -2,8 +2,11 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { SendHorizontal } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Hero = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <section className="py-20 md:py-28 flex flex-col md:flex-row items-center justify-between gap-10">
       <div className="flex-1 space-y-6">
@@ -22,7 +25,7 @@ const Hero = () => {
         <div className="mt-8 flex justify-center md:justify-start">
           <Button 
             size="lg"
-            className="text-lg py-6 px-8 bg-primary hover:bg-primary/90 w-full sm:w-auto"
+            className={`text-lg py-6 px-8 bg-primary hover:bg-primary/90 ${isMobile ? 'w-[288px]' : 'w-full sm:w-auto'}`}
             onClick={() => window.open("https://t.me/artemuhanov", "_blank")}
           >
             <SendHorizontal className="mr-2" /> Написать в Telegram
